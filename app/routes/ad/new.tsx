@@ -8,6 +8,7 @@ import invariant from "tiny-invariant";
 
 export const validator = withZod(
   z.object({
+    // TODO: validate slug unique constraint
     slug: z.string().min(1, { message: "Slug is required" }),
     title: z.string().min(1, { message: "Title is required" }),
     description: z.string().min(1, { message: "Description is Required" }),
@@ -37,6 +38,7 @@ export async function action({ request }: ActionArgs) {
 export default function AdNewPage() {
   return (
     <ValidatedForm validator={validator} method="post">
+        {/* TODO: Create components with errors */}
       <label htmlFor="slug">Slug</label>
       <input name="slug"></input>
       <label htmlFor="title">Title</label>
@@ -45,6 +47,7 @@ export default function AdNewPage() {
       <input name="description"></input>
       <label htmlFor="tags">Tags</label>
       <input name="tags"></input>
+      {/* TODO: Create button component with loader */}
       <button type="submit">Create Advertising</button>
     </ValidatedForm>
   );
