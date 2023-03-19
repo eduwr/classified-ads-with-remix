@@ -33,6 +33,10 @@ export default function Index() {
         <Link to="/ad/new" className="text-xl text-blue-600 underline">
           New Advertising
         </Link>
+        <div className="m-10"></div>
+        <Link to="/auth/new" className="text-xl text-blue-600 underline">
+          Sign In
+        </Link>
       </div>
       <ul>
         {data.map((ad: any) => (

@@ -13,6 +13,7 @@ export async function loader({ params }: LoaderArgs) {
 
 export default function AdvertisingDetailsPage() {
   const data = useLoaderData<typeof loader>();
+  invariant(data, "No data found");
 
   return (
     <section>

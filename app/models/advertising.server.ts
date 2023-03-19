@@ -30,6 +30,7 @@ export function createAdvertising({
   });
 }
 
+// TODO Refactor this code to use advertisingId instead of slug.
 export function deleteAdvertising({ slug }: Pick<Advertising, "slug">) {
   return prisma.advertising.deleteMany({
     where: { slug },
