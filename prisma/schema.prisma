@@ -12,7 +12,17 @@ model Advertising {
   title         String
   description   String
   tags          String
+  user User @relation(fields: [slug], references: [userId])
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model User {
+  userId String @id
+  email String @unique
+  firstName String
+  lastName String
+  middleName String?
+  ads Advertising[]
 }
